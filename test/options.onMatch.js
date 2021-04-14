@@ -14,7 +14,7 @@ const options = () => {
   return {
     format,
     onMatch({ pattern, regex, input, output }, matches) {
-      if (output.length > 2 && (output.startsWith('./') || output.startsWith('.\\'))) {
+      if (output.length > 2 && (output.indexOf('./') === 0 || output.indexOf('.\\') === 0)) {
         output = output.slice(2);
       }
       if (matches) {

@@ -10,7 +10,7 @@ const pm = require('..');
 
 const match = (list, pattern, options = {}) => {
   let normalize = false;
-  if (pattern.startsWith('./')) {
+  if (pattern.indexOf('./') === 0) {
     pattern = pattern.slice(2);
     normalize = true;
   }
